@@ -4,5 +4,7 @@
 # fail fast
 set -e
 
+echo "Installing gettext"
+
 # debug
 # set -x

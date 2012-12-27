@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
+echo "Gettext detect"
+
 exit 0
