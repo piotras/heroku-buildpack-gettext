@@ -4,9 +4,13 @@
 set -e
 
 GETTEXT_TARBALL=https://s3-eu-west-1.amazonaws.com/midgard-heroku/gettext.tar.gz
+TARGET_DIR=/app
 
-if [ ! -d gettext ]; then
-	echo "$PWD/gettext doesn't exist"
+cd $TARGET_DIR
+
+if [ -d gettext ]; then
+	echo "$PWD/gettext already installed"
+	exit 0
 fi
 
 echo "-----> Installing gettext"
