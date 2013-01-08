@@ -17,6 +17,6 @@ fi
 
 echo "-----> Installing gettext..."
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
-mv gettext $TARGET_DIR
+# mv gettext $TARGET_DIR
 echo "-----> done in $TARGET_DIR/gettext"
 ls $TARGET_DIR/gettext
