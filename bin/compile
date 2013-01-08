@@ -5,18 +5,17 @@ set -x
 
 GETTEXT_TARBALL=https://s3-eu-west-1.amazonaws.com/midgard-heroku/gettext.tar.gz
 TARGET_DIR=/app
+BUILD_DIR=$1
+CACHE_DIR=$2
 
-cd $TARGET_DIR
+cd $BUILD_DIR
 
-echo $PWD
-echo $1
-echo $2
-
-if [ -d gettext ]; then
+if [ -d $TARGET_DIR/gettext ]; then
 	echo "$PWD/gettext already installed"
 	exit 0
 fi
 
-echo "-----> Installing gettext"
+echo "-----> Installing gettext..."
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
-ls
+mv gettext $TARGET_DIR
+echo "-----> done in $TARGET_DIR/gettext"
