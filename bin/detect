@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-exit 0
+echo "Gettext library"
