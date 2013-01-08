@@ -8,6 +8,10 @@ TARGET_DIR=/app
 
 cd $TARGET_DIR
 
+echo $PWD
+echo $1
+echo $2
+
 if [ -d gettext ]; then
 	echo "$PWD/gettext already installed"
 	exit 0
