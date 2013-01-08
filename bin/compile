@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-set -e
+set -x
 
 GETTEXT_TARBALL=https://s3-eu-west-1.amazonaws.com/midgard-heroku/gettext.tar.gz
 TARGET_DIR=/app
@@ -19,4 +19,4 @@ fi
 
 echo "-----> Installing gettext"
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
-
+ls
