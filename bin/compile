@@ -5,6 +5,10 @@ set -e
 
 GETTEXT_TARBALL=https://s3-eu-west-1.amazonaws.com/midgard-heroku/gettext.tar.gz
 
+if [ ! -d gettext ]; then
+	echo "$PWD/gettext doesn't exist"
+fi
+
 echo "-----> Installing gettext"
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
 
