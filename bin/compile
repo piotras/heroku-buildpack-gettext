@@ -16,5 +16,5 @@ if [ -d $TARGET_DIR/gettext ]; then
 fi
 
 echo "-----> Installing gettext..."
-curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar x
+curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xj
 echo "-----> done in $TARGET_DIR/gettext"
