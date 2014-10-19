@@ -3,7 +3,8 @@
 
 set -e
 
-GETTEXT_TARBALL=http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.xz
+GETTEXT_VERSION=0.19.3
+GETTEXT_SRC_TARBALL=http://ftp.gnu.org/pub/gnu/gettext/gettext-$GETTEXT_VERSION.tar.xz
 TARGET_DIR=$HOME
 BUILD_DIR=$1
 CACHE_DIR=$2
@@ -16,5 +17,11 @@ if [ -d $TARGET_DIR/gettext ]; then
 fi
 
 echo "-----> Installing gettext..."
-curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xj
+echo $GETTEXT_SRC_TARBALL
+curl --silent --max-time 60 --location "$GETTEXT_SRC_TARBALL" | tar -x
+cd gettext-$GETTEXT_VERSION
+cd gettext-tools
+./configure --prefix=$TARGET_DIR/gettext --enable-static --disable-shared
+make
+make install
 echo "-----> done in $TARGET_DIR/gettext"
