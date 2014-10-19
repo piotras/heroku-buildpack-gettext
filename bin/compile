@@ -19,8 +19,9 @@ fi
 echo "-----> Installing gettext..."
 echo $GETTEXT_SRC_TARBALL
 curl $GETTEXT_SRC_TARBALL -O
-tar xf gettext-$GETTEXT_VERSION.tar.xz
-cd gettext-$GETTEXT_VERSION
+mv gettext-$GETTEXT_VERSION.tar.xz gettext.tar.xz
+tar xf gettext.tar.xz
+cd gettext
 cd gettext-tools
 ./configure --prefix=$TARGET_DIR/gettext --enable-static --disable-shared
 make
