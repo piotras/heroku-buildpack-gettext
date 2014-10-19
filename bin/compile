@@ -18,12 +18,11 @@ fi
 
 echo "-----> Installing gettext..."
 echo $GETTEXT_SRC_TARBALL
-curl -o gettext.tar.xz -L $GETTEXT_SRC_TARBALL
-tar xf gettext.tar.xz
-mv gettext-0.19.3 gettext
-cd gettext
+curl -O $GETTEXT_SRC_TARBALL
+tar xf gettext-$GETTEXT_VERSION.tar.xz
+cd gettext-$GETTEXT_VERSION
 cd gettext-tools
-./configure --prefix=$TARGET_DIR/gettext --enable-static --disable-shared
+./configure --prefix=/app/gettext --enable-static --disable-shared
 make
 make install
-echo "-----> done in $TARGET_DIR/gettext"
+echo "-----> done in /app/gettext"
