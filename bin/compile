@@ -18,7 +18,7 @@ fi
 
 echo "-----> Installing gettext..."
 echo $GETTEXT_SRC_TARBALL
-wget $GETTEXT_SRC_TARBALL
+curl $GETTEXT_SRC_TARBALL -O
 tar xf gettext-$GETTEXT_VERSION.tar.xz
 cd gettext-$GETTEXT_VERSION
 cd gettext-tools
