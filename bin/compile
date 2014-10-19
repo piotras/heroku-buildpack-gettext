@@ -17,6 +17,7 @@ if [ -d $TARGET_DIR/gettext ]; then
 fi
 
 echo "-----> Installing gettext..."
+echo $GETTEXT_SRC_TARBALL
 curl --silent --max-time 60 --location "$GETTEXT_SRC_TARBALL" | tar x
 cd gettext-$GETTEXT_VERSION
 cd gettext-tools
