@@ -3,7 +3,7 @@
 
 set -e
 
-GETTEXT_TARBALL=https://s3-eu-west-1.amazonaws.com/midgard-heroku/gettext.tar.gz
+GETTEXT_TARBALL=http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.gz
 TARGET_DIR=$HOME
 BUILD_DIR=$1
 CACHE_DIR=$2
