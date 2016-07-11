@@ -21,4 +21,8 @@ echo "-----> Installing gettext..."
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
 echo "-----> Exporting path (method 1)..."
 echo "export PATH=\"\$PATH:$BUILD_DIR/.heroku/gettext/bin\"" >> "$BP_DIR/export"
+echo "-----> Export using profile.d..."
+mkdir -p "$BUILD_DIR/.profile.d"
+echo "export PATH=\"\$PATH:$BUILD_DIR/.heroku/gettext/bin\"" >> "$BUILD_DIR/.profile.d/gettext.sh"
+chmod +x "$BUILD_DIR/.profile.d/gettext.sh"
 echo "-----> done in $TARGET_DIR/gettext"
