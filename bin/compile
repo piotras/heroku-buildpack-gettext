@@ -7,6 +7,8 @@ GETTEXT_TARBALL=http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.gz
 TARGET_DIR=$HOME
 BUILD_DIR=$1
 CACHE_DIR=$2
+# this trick is borrowed from nodejs buildpack, https://github.com/heroku/heroku-buildpack-nodejs/blob/51ea78e68eccd980f72b9fc62c5e46187d869843/bin/compile#L20
+BP_DIR=$(cd "$(dirname ${0:-})"; cd ..; pwd)
 
 cd $BUILD_DIR
 
@@ -17,4 +19,6 @@ fi
 
 echo "-----> Installing gettext..."
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
+echo "-----> Exporting path (method 1)..."
+echo "export PATH=\"\$PATH:$BUILD_DIR/.heroku/gettext/bin\"" >> "$BP_DIR/export"
 echo "-----> done in $TARGET_DIR/gettext"
