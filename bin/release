@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# bin/release <build-dir>
-
-cat <<EOF
----
-config_vars:
-PATH: $HOME/gettext/bin:$PATH
-EOF
