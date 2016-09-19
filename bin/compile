@@ -18,6 +18,7 @@ if [ -d $TARGET_DIR/gettext ]; then
 fi
 
 echo "-----> Installing gettext..."
+mkdir -p $BUILD_DIR/.heroku
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz -C "$BUILD_DIR/.heroku"
 
 # display version in a nice way
